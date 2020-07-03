@@ -21,6 +21,15 @@ Endpoints:
 
 `/register`
 
+This endpoint accepts a `POST` request of a JSON Object containing the service name as well as the openapi spec in JSON format. The object looks like:
 
+```json
+{
+    "name": "mars-viking",
+    "spec": "..."
+}
+```
+
+This data is stored in a postgres database by mars-command. A heartbeat is then set within mars-command to ensure that mars-viking is accessible.
 
 ## Implementation: Mars Viking
