@@ -6,7 +6,7 @@ const testObject = {
 }
 
 /* GET register page. */
-router.get('/register', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.json(testObject)
 });
 
