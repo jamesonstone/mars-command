@@ -30,6 +30,8 @@ This endpoint accepts a `POST` request of a JSON Object containing the service n
 }
 ```
 
-This data is stored in a postgres database by mars-command. A heartbeat is then set within mars-command to ensure that mars-viking is accessible.
+This data is stored in a postgres database by mars-command. A heartbeat is then set within mars-command to ensure that mars-viking is accessible. Services registering to the Service Gateway are **required to have a /health endpoint**.
+
+For the sake of the prototype, we're going to store these values into an in memory object.
 
 ## Implementation: Mars Viking

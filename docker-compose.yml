@@ -10,19 +10,6 @@ services:
     ports:
       - 3000:3000
 
-  postgres:
-    image: postgres
-    container_name: postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mars
-      PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - 4321:5432
-    volumes:
-      - ./data/postgres/pgdata:/var/lib/postgresql/data/pgdata
-
   viking:
     image: jstone28/mars-viking:latest
     container_name: viking

@@ -1,21 +1,22 @@
 var express = require('express');
 var router = express.Router();
+const main = require('../service/main')
+
+let serviceList = []
 
 const statusReceived = {
     "status": "received"
 }
 
-/*
-* GET register page.
-*/
 router.get('/', (req, res, next) => {
-  res.json(statusReceived)
+  availableService = main.getServiceList();
+  res.json(availableService);
 });
 
 router.post('/', (req, res, next) => {
-  const service = req.body
-  console.log(service.spec.paths['/health'])
-  res.json(statusReceived)
+  const service = req.body;
+  main.addServiceToList(service);
+  res.json(statusReceived);
 })
 
 module.exports = router;
